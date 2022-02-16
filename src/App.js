@@ -5,6 +5,7 @@ import Date from './date';
 import Title from './title';
 import Details from './details';
 import Copyright from "./copyright";
+import Image from './image'
 
 
 
@@ -29,6 +30,9 @@ function App() {
      </div>
     <div className="title-container">
       <Title title={nasa.title} />
+    </div>
+    <div className="image-container">
+      <Image imageUrl ={nasa.url} />
     </div>
     <div className="details-container">
       <Details details={nasa.explanation} />
