@@ -14,14 +14,7 @@ import Photo from './photo'
 
 function App() {
   const [nasa, setNasa] = useState();
-  const [showDetails, setShowDetails] = useState(null);
-
-const openDetails = () => {
-  setShowDetails('show')
-}
-const closeDetails = () => {
-  setShowDetails(null)
-}
+  
   useEffect(() => {
     axios.get('https://api.nasa.gov/planetary/apod?api_key=kQBHCeiY2MJggG1irHwhJcjNG66syvtUH1UZDGvA')
   .then(res => {
@@ -40,21 +33,3 @@ const closeDetails = () => {
 
 export default App;
 
-
-
-{/* <div className="App">
-<div className="meta-data">
- <Date date={nasa} />
- <Copyright  copyright ={nasa} />
-</div>
-<div className="title-container">
- {/* <Title title={nasa} openDetails={openDetails} /> */}
-// </div>
-// <div className="image-container">
-//  <Image imageUrl ={nasa} />
-// </div>
-// <div className="details-container">
-//  {/* <Details details={nasa.explanation} /> */}
-//  {showDetails === 'show'? <Details details={nasa} />: null }
-// </div>
-// </div> */}
