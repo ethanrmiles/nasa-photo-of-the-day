@@ -3,11 +3,12 @@ import axios from "axios";
 
 export default function Title (props)  {
     const {title} = props
+    const {openDetails} = openDetails
     console.log(title)
     return (
         <>
         <h1>{title}</h1>
-        <button>More</button>
+        {/* <button onClick={openDetails}>More</button> */}
         </>
     )
 }
