@@ -1,8 +1,19 @@
 import React, {useState, useEffect} from "react";
+import Details from './details'
 
 export default function Photo (props) {
-    const {photo} = props
-    console.log(props.photo)
+    const { photo } = props
+    const [showDetails, setShowDetails] = useState(null);
+
+const openDetails = () => {
+  setShowDetails('show')
+}
+const closeDetails = () => {
+  setShowDetails(null)
+}
+const toggleDetails = () => {
+    setShowDetails(!showDetails)
+}
     return (
         <>
         <div className="bg-img">
@@ -22,11 +33,13 @@ export default function Photo (props) {
                     <h1>{props.photo.title}</h1>
                 </div>
                 <div className="more-container" >
-                     <button>More</button>
+                     <button onClick={toggleDetails} >{showDetails?'hide':'more'}</button>
                 </div>
             </div>
             <div className="details-container">
-                <p>{props.photo.explanation}</p>
+                {
+                showDetails &&  <Details { ...photo } />
+                }
             </div>
         </div>
         </>

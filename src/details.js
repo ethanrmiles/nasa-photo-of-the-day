@@ -2,9 +2,10 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 
 export default function Details (props)  {
-    const {details} = props
+    const {photo} = props
+    console.log(props.explanation)
     return (
-         <h3>{details}</h3>
+       <p>{props.explanation}</p>
     )
 }
 
